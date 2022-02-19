@@ -1,0 +1,704 @@
+.xplugin * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.xplugin  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+.xplugin *::-webkit-scrollbar-track {
+    background-color: #3b3e40;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+.xplugin *::-webkit-scrollbar-thumb {
+    background-color: #bcd;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+.xplugin {
+    font: 14px "microsoft yahei", Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    overflow-x: hidden;
+  }
+  .xplugin ul,
+  .xplugin li,
+  .xplugin p,
+  .xplugin h1,
+  .xplugin h2,
+  .xplugin h3,
+  .xplugin h4,
+  .xplugin h5,
+  .xplugin h6,
+  .xplugin dl,
+  .xplugin dt,
+  .xplugin dd {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+  }
+  .xplugin a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .ide {
+    overflow: hidden;
+    color: #dcdcdc;
+    display: none;
+  }
+  .xplugin-tool {
+    position: fixed;
+    width: 100%;
+    height: 32px;
+    background-color: #3b3e40;
+    font-size: 14px;
+    border: 1px solid #282a36;
+    z-index: 999;
+  }
+  .xplugin-tool .logo {
+    float: left;
+    margin: 5px 15px;
+  }
+  .xplugin-tool .menu {
+    float: left;
+  }
+  .xplugin-tool .menu > li {
+    float: left;
+    cursor: pointer;
+    position: relative;
+    height: 30px;
+  }
+  .xplugin-tool .menu > li > span {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    padding: 0px 15px;
+    cursor: pointer;
+  }
+  .xplugin-tool .menu label {
+    cursor: pointer;
+  }
+  .xplugin-tool .menu > li:hover > span {
+    background-color: #38970a;
+    color: #ffffff;
+  }
+  .xplugin-tool .menu .item {
+    background-color: #3b3e40;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    display: none;
+    border: 1px solid #282a36;
+    width: 140px;
+  }
+  .xplugin-tool .menu > li:hover .item {
+    display: block;
+  }
+  .xplugin-tool .menu .item li {
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 0px;
+    padding: 0px 10px;
+  }
+  .xplugin-tool .menu .item li.sep {
+    height: 1px;
+    line-height: 1px;
+    background-color: #282a36;
+  }
+  .xplugin-tool .menu .item li:hover {
+    background-color: #38970a;
+    color: #ffffff;
+  }
+  .xplugin-tool .user {
+    float: right;
+    margin-right: 40px;
+  }
+  .xplugin-tool .user img {
+    max-width: 26px;
+    max-height: 26px;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  .xplugin-tool .user span {
+    line-height: 30px;
+    display: inline-block;
+    height: 30px;
+    margin-right: 10px;
+  }
+  .xplugin-tool .user i:hover {
+    color: #c13f3f;
+    cursor: pointer;
+  }
+  .xplugin-content {
+    height: 100%;
+    padding-top: 32px;
+    position: relative;
+  }
+  .xplugin-sidebar {
+    height: 100%;
+    color: #dcdcdc;
+    width: 260px;
+    float: left;
+    position: relative;
+    z-index: 102;
+  }
+  .xplugin-sidebar .sidebar-move {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 1px;
+    border: 1px solid #dcdcdc;
+    cursor: w-resize;
+    display: block;
+    outline: none;
+  }
+  .xplugin-sidebar .left-bar {
+    height: 100%;
+    background-color: #3b3e40;
+    float: left;
+    border: 1px solid #282a36;
+    width: 28px;
+  }
+  .xplugin-sidebar .left-bar span {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    display: block;
+    width: 80px;
+    padding: 0px 10px;
+    position: relative;
+    left: -28px;
+    top: 25px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .xplugin-sidebar .left-bar span.s2 {
+    top: 76px;
+  }
+  .xplugin-sidebar .left-bar span.on {
+    background-color: #282a36;
+  }
+  .xplugin-sidebar .sidebar {
+    background-color: #3b3e40;
+    height: 100%;
+    border: 1px solid #282a36;
+    padding: 5px 10px;
+    overflow: auto;
+  }
+  .xplugin-sidebar .sidebar .folder > ul {
+    display: none;
+  }
+  .xplugin-sidebar .sidebar .folder > ul > li {
+    margin-left: 15px;
+  }
+  .xplugin-sidebar .sidebar .folder span:hover {
+    cursor: pointer;
+  }
+  .xplugin-sidebar .sidebar .folder.open > ul {
+    display: block;
+    line-height: 22px;
+  }
+  .xplugin-sidebar .sidebar .folder > span,
+  .xplugin-sidebar .sidebar .file > span {
+    font-family: "microsoft yahei" "FontAwesome";
+    line-height: 22px;
+    white-space: nowrap;
+  }
+  .xplugin-sidebar .sidebar .folder > span:before {
+    content: "\f114  ";
+  }
+  .xplugin-sidebar .sidebar .folder.open > span:before {
+    content: "\f115  ";
+  }
+  .xplugin-sidebar .sidebar .file > span:before {
+    content: "\f0f6  ";
+  }
+  .xplugin-sidebar .sidebar .select {
+    color: #38970a;
+  }
+  .xplugin-editor {
+    background-color: #282a36;
+    height: 100%;
+    float: left;
+    position: relative;
+    padding-top: 30px;
+    border: 1px solid #282a36;
+  }
+  .xplugin-editor #codeEditor {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 1px;
+    height: 1px;
+  }
+  .xplugin-editor .open-panel {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 30px;
+    background-color: #3b3e40;
+    top: 0px;
+    padding-left: 32px;
+  }
+  .xplugin-editor .open-panel .move {
+    width: 32px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    background-color: #3b3e40;
+    font-size: 20px;
+    padding: 0px 5px;
+    z-index: 102;
+    border-right: 1px solid #282a36;
+  }
+  .xplugin-editor .open-panel ul {
+    width: 2000px;
+    margin-left: 0px;
+    z-index: 101;
+  }
+  .xplugin-editor .open-panel li {
+    float: left;
+    padding: 0px 15px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #282a36;
+  }
+  .xplugin-editor .open-panel li.on {
+    background-color: #282a36;
+    color: #38970a;
+    border-bottom: 0px;
+  }
+  .xplugin-editor .open-panel li.change {
+    color: #c13f3f;
+  }
+  .xplugin-editor .open-panel li i {
+    cursor: pointer;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+  }
+  .preview-icon {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 999;
+  }
+  .preview-icon.open i {
+    color: #000000;
+  }
+  .preview-icon i {
+    cursor: pointer;
+  }
+  .preview-icon i.fa-eye + i.icon-resize {
+    display: inline-block;
+  }
+  .preview-icon i.fa-eye-slash + i.icon-resize {
+    display: none;
+  }
+  .preview-code {
+    display: none;
+    background-color: #ffffff;
+    position: absolute;
+    right: 0px;
+    top: 30px;
+    z-index: 998;
+    width: 50%;
+    height: 95%;
+    overflow: auto;
+  }
+  .CodeMirror {
+    height: 100%;
+    width: 100%;
+  }
+  /*
+  .cm-s-dracula.CodeMirror, .cm-s-dracula .CodeMirror-gutters{background-color:@black !important;color:@white;}
+  */
+  .xplugin-win-wraper {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-color: #000;
+    opacity: 0.3;
+    display: none;
+  }
+  .xplugin-win {
+    width: 700px;
+    border: 2px solid #282a36;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -175px 0px 0px -350px;
+    background-color: #282a36;
+    color: #dcdcdc;
+    display: none; 
+    z-index: 10001;
+  }
+  .xplugin-win.small {
+    width: 360px;
+    height: auto;
+    margin: -250px 0px 0px -180px;
+  }
+  .xplugin-win.large {
+    width: 980px;
+    height: auto;
+    margin: -300px 0px 0px -450px;
+  }
+  .xplugin-win .title {
+    background-color: #3b3e40;
+    color: #dcdcdc;
+    height: 36px;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  .xplugin-win .title h3 {
+    padding: 0px 10px;
+    height: 36px;
+    line-height: 36px;
+  }
+  .xplugin-win .title i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+  .xplugin-win .win-body {
+    position: relative;
+    width: 100%;
+    padding-left: 120px;
+  }
+  .xplugin-win .win-body .menu {
+    width: 120px;
+    background-color: #3b3e40;
+    height: 100%;
+    z-index: 100;
+    height: 272px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-right: 1px solid #dcdcdc;
+  }
+  .xplugin-win .win-body .menu li {
+    height: 30px;
+    line-height: 30px;
+    color: #dcdcdc;
+    padding-left: 20px;
+    cursor: pointer;
+  }
+  .xplugin-win .win-body .menu li:hover {
+    background-color: #38970a;
+    color: #ffffff;
+  }
+  .xplugin-win .win-body .menu li.on {
+    background-color: #38970a;
+    color: #ffffff;
+  }
+  .xplugin-win .win-body .tab-content {
+    width: 100%;
+    z-index: 99;
+  }
+  .xplugin-win .win-body .tab-content .detail {
+    display: none;
+    padding: 30px 0px 0px 40px;
+  }
+  .xplugin-win .win-body .tab-content .detail.no-padding {
+    padding: 0px;
+  }
+  .xplugin-win .win-body .tab-content .detail.on {
+    display: block;
+  }
+  .xplugin-win .win-tool {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: #3b3e40;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    border: 1px solid #282a36;
+    border-top: 1px solid #dcdcdc;
+  }
+  .xplugin-win .win-form {
+    padding: 20px 0px 60px 20px;
+  }
+  .context-menu {
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    border: 1px solid #282a36;
+    background-color: #3b3e40;
+    width: 200px;
+    z-index: 104;
+  }
+  .context-menu li {
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    position: relative;
+  }
+  .context-menu li.sep {
+    height: 1px;
+    background-color: #282a36;
+  }
+  .context-menu li:hover {
+    background-color: #38970a;
+  }
+  .upload-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px important;
+    direction: ltr;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+  }
+  .msg-win {
+    background-color: #38970a;
+    height: 30px;
+    position: absolute;
+    top: 20%;
+    margin-top: -15px;
+    left: 50%;
+    line-height: 30px;
+    padding: 0px 15px;
+    display: none;
+    z-index: 2000;
+  }
+  .waring-win {
+    background-color: #c13f3f;
+    height: 30px;
+    position: absolute;
+    top: 20%;
+    margin-top: -15px;
+    left: 50%;
+    line-height: 30px;
+    padding: 0px 15px;
+    display: none;
+    z-index: 2000;
+  }
+  .phone-view-win {
+    background: url(../images/phone.png) no-repeat;
+    background-size: 300px;
+    padding: 75px 20px 75px 18px;
+    z-index: 2000;
+    width: 300px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -300px 0px 0px -150px;
+    display: none;
+  }
+  .phone-view-win .icon-close {
+    font-size: 30px;
+    position: absolute;
+    left: 97%;
+    top: 0px;
+    cursor: pointer;
+  }
+  input[type='text'],
+  input[type='password'],
+  input[type='number'],
+  select {
+    border: 1px solid #dcdcdc;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 5px;
+    padding: 0px 15px;
+    outline: none;
+  }
+  .form-group {
+    position: relative;
+    margin-bottom: 10px;
+    min-height: 32px;
+    display: inline-block;
+  }
+  .form-group.block {
+    display: block;
+  }
+  .form-group .label {
+    position: absolute;
+    left: 0px;
+    line-height: 32px;
+    height: 32px;
+  }
+
+  .form-group .form-ele {
+    margin-left: 80px;
+    min-width: 480px;
+    line-height: 32px;
+  }
+
+  .form-group .form-ele.smalll {
+    margin-left: 80px;
+    min-width: 240px;
+    line-height: 32px;
+  }
+
+  .form-group .form-ele.mini {
+    min-width: 160px;
+    width: 120px;
+  }
+  .form-group input,
+  .form-group textarea {
+    background-color: #3b3e40;
+    color: #dcdcdc;
+  }
+ 
+  .form-group textarea.large {
+    width: 800px;
+  }
+
+  .form-group select.form-ele {
+    min-width: 240px;
+    background-color: #3b3e40;
+    color: #dcdcdc;
+  }
+  .form-group textarea.form-ele {
+    min-width: 300px;
+    min-height: 100px;
+  }
+  .form-group .form-btn .button {
+    padding: 5px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    outline-style: none;
+  }
+  .form-group .form-btn .button.on {
+    background-color: #38970a;
+    border: 1px solid #38970a;
+  }
+  .form-group span.error {
+    display: block;
+    position: absolute;
+    margin-left: 10px;
+    min-width: 200px;
+    color: #f00;
+    line-height: 22px;
+    left: 100%;
+    top: 5px;
+    font-size: 12px;
+  }
+  .form-ele-btn {
+    position: absolute;
+    left: 200px;
+    top: 5px;
+  }
+  .btn {
+    padding: 5px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 14px;
+    outline-style: none;
+    position: relative;
+  }
+  .btn-gray {
+    background: #3b3e40;
+    border: 1px solid #dcdcdc;
+    color: #dcdcdc;
+  }
+  .btn-green {
+    background-color: #38970a;
+    border: 2px solid #38970a;
+    color: #ffffff;
+  }
+  .btn-red {
+    background-color: #c13f3f;
+    border: 2px solid #c13f3f;
+    color: #ffffff;
+  }
+  .btn-sm {
+    padding: 1px 3px;
+    font-size: 12px;
+  }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #282a36;
+  }
+  .table tr {
+    position: relative;
+    border: 1px solid #282a36;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    border-bottom: transparent;
+  }
+  .table th {
+    padding: 8px 6px;
+    background: #282a36;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: left;
+  }
+  .table td {
+    padding: 8px 5px;
+    font-size: 12px;
+    color: #ffffff;
+    position: relative;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    text-align: left;
+  }
+  .table-bar {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .table-bar a {
+    border: 1px solid #dcdcdc;
+    padding: 3px 10px;
+    margin-right: 5px;
+  }
+  .imgCode {
+    vertical-align: middle;
+  }
+  .circle-img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  .circle-img.lg {
+    width: 40px;
+    height: 40px;
+  }
+  .cl-green {
+    color: #38970a;
+  }
+  .cl-red {
+    color: #c13f3f;
+  }
+  .cur-poin {
+    cursor: pointer;
+  }
+  #about-us-win p {
+    margin-bottom: 10px;
+  }
+  

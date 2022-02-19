@@ -1,0 +1,1 @@
+XPlugin.initContextMenu(XPlugin.contextMenuConfig);
